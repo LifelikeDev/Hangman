@@ -1,10 +1,15 @@
 import React from "react";
 
-const Word = () => {
+const Word = ({ selectedWord, correctLetters }) => {
   return (
     <article className="word">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed,
-      voluptatibus commodi! Expedita.
+      {selectedWord.split("").map((letter, index) => {
+        return (
+          <span key={index} className="letter">
+            {correctLetters.includes(letter) ? letter : ""}
+          </span>
+        );
+      })}
     </article>
   );
 };

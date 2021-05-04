@@ -32,8 +32,8 @@ const App = () => {
           <GameIllustration />
         </div>
         <div className="word-display">
-          <WrongLetters />
-          <Word />
+          <WrongLetters wrongLetters={wrongLetters} />
+          <Word selectedWord={selectedWord} correctLetters={correctLetters} />
         </div>
       </section>
       <Popup />
