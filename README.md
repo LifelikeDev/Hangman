@@ -1,4 +1,4 @@
- Hangman
+# Hangman
 
 A Hangman game built with React and React Hooks
 
