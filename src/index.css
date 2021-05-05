@@ -27,10 +27,10 @@ body {
   /* border: 2px solid blue; */
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   margin: 0 auto;
-  /* height: 100%; */
+  height: 100%;
   padding: 2rem 0;
   max-width: 90vw;
   width: 1100px;
@@ -150,24 +150,29 @@ body {
 
 /*------------- Popup -------------*/
 .popup-wrapper {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  /* display: flex; */
-  display: none;
-  align-items: center;
-  justify-content: center;
+}
+
+.popup-wrapper.reveal {
+  display: flex;
 }
 
 .popup {
   background: #2980b9;
   border-radius: var(--border-radius);
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 30px 100px;
   text-align: center;
+  /* max-width: 70%;
+  margin: 0 auto; */
 }
 
 .popup .btn {
@@ -193,15 +198,47 @@ body {
   outline: 0;
 }
 
+.game-status {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.game-status.headline {
+  margin-bottom: var(--mb-half);
+}
+
+.game-status.subline {
+  font-size: 16px;
+  margin-bottom: var(--mb-one);
+}
+
+.word-revealer {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ddd;
+}
+
+.word-revealer .revealed-word {
+  color: #ff0;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 /*------------ Notification ------------*/
 .notification-wrapper {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 10px 12px;
+  background-color: rgba(3, 3, 27, 0.75);
+  color: hsl(0, 94%, 65%);
+  padding: 15px 12px;
   position: absolute;
-  bottom: -50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
   transition: transform 0.3s ease-in-out;
-  margin-bottom: 3.5rem;
 }
 
 .notification-wrapper p {
@@ -215,12 +252,9 @@ body {
 
 /*============== Media Queries ==============*/
 @media screen and (max-width: 678px) {
-  /* .game-wrapper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "illustration"
-      "word";
-  } */
+  .popup {
+    padding: 30px 60px;
+  }
 }
 
 @media screen and (max-width: 495px) {

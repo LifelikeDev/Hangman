@@ -2,7 +2,6 @@ import React from "react";
 
 const GameIllustration = ({ wrongLetters }) => {
   const errors = wrongLetters.length;
-  console.log(errors);
   return (
     <>
       <svg

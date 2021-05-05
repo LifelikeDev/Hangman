@@ -1,10 +1,12 @@
 import React from "react";
 
-const Notification = () => {
+const Notification = ({ showNotification }) => {
   return (
-    <article className="notification-wrapper">
-      <p>Letter already entered!</p>
-    </article>
+    showNotification && (
+      <article className="notification-wrapper">
+        <p>⚠ You have already entered this letter</p>
+      </article>
+    )
   );
 };
 
