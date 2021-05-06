@@ -15,6 +15,7 @@ const AppProvider = ({ children }) => {
   const [showNotification, setShowNotification] = useState(false);
   const [welcome, setWelcome] = useState(true);
   const [username, setUsername] = useState("");
+  const [usernameError, setUsernameError] = useState(false);
 
   useEffect(() => {
     // define keydown event handler function
@@ -67,7 +68,8 @@ const AppProvider = ({ children }) => {
     event.preventDefault();
 
     if (username === "") {
-      window.alert("Please enter your username");
+      //   window.alert("Please enter your username");
+      displayNotification(setUsernameError);
     } else {
       setWelcome(false);
       playAgain();
@@ -92,6 +94,7 @@ const AppProvider = ({ children }) => {
         showNotification,
         welcome,
         username,
+        usernameError,
         setUsername,
         loadGame,
         exitGame,

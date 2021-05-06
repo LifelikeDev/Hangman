@@ -357,6 +357,12 @@ header .header-content {
   transition: transform 0.3s ease-in-out;
 }
 
+.notification-wrapper.username-error {
+  /* border: 1px solid red; */
+  left: 20%;
+  right: 20%;
+}
+
 .notification-wrapper p {
   font-size: 15px;
   margin: 0;
@@ -375,7 +381,7 @@ header .header-content {
 
 @media screen and (max-width: 495px) {
   .main-wrapper {
-    height: 105vh;
+    /* height: 105vh; */
   }
 
   .game-wrapper {

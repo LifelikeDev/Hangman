@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 const Welcome = () => {
-  const { setUsername, loadGame, username } = useGlobalContext();
+  const { setUsername, loadGame, username, usernameError } = useGlobalContext();
   return (
     <main className="main-wrapper welcome">
       <section className="welcome-wrapper">
@@ -25,10 +25,17 @@ const Welcome = () => {
               <option value="sports">Sports</option>
               <option value="tools">Tools</option>
             </select>
-            <button className="btn">Play Game</button>
+            <button type="submit" className="btn">
+              Play Game
+            </button>
           </form>
         </div>
       </section>
+      {usernameError && (
+        <article className="notification-wrapper username-error">
+          <p>⚠ Please enter your username</p>
+        </article>
+      )}
     </main>
   );
 };
