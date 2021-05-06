@@ -1,6 +1,9 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
-const WrongLetters = ({ wrongLetters }) => {
+const WrongLetters = () => {
+  const { wrongLetters } = useGlobalContext();
+
   return (
     <article className="wrong-letters__wrapper">
       <div className="wrong-letters">

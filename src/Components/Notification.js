@@ -1,6 +1,9 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
-const Notification = ({ showNotification }) => {
+const Notification = () => {
+  const { showNotification } = useGlobalContext();
+
   return (
     showNotification && (
       <article className="notification-wrapper">

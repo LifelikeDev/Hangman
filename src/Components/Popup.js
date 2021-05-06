@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import { checkWinStatus } from "../helpers/helperFunctions";
+import { useGlobalContext } from "../context";
 
-const Popup = ({
-  correctLetters,
-  wrongLetters,
-  setPlay,
-  selectedWord,
-  playAgain,
-}) => {
+const Popup = () => {
+  const {
+    correctLetters,
+    wrongLetters,
+    setPlay,
+    selectedWord,
+    playAgain,
+    exitGame,
+  } = useGlobalContext();
+
   let winStatusHeadline = "";
   let winStatusSubline = "";
   let play = true;
@@ -42,6 +46,9 @@ const Popup = ({
         )}
         <button className="btn" onClick={playAgain}>
           Play Again
+        </button>
+        <button className="btn exit-btn" onClick={exitGame}>
+          Exit Game
         </button>
       </div>
     </section>

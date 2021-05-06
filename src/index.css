@@ -15,7 +15,8 @@
 
 /*================ Body Content ================*/
 body {
-  background-color: rgb(235, 233, 233);
+  /* background-color: rgb(235, 233, 233); */
+  background-color: rgba(0, 0, 0, 0.7);
   color: #222;
   display: flex;
   font-family: "Open Sans", sans-serif;
@@ -25,29 +26,135 @@ body {
 
 .main-wrapper {
   /* border: 2px solid blue; */
+  background-color: rgb(235, 233, 233);
+  box-shadow: 2px -2px 8px 2px rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   /* justify-content: center; */
   flex-direction: column;
   margin: 0 auto;
   height: 100%;
-  padding: 2rem 0;
+  padding: 0 0 2rem;
   max-width: 90vw;
   width: 1100px;
 }
 
+/*----------------- Welcome Screen -----------------*/
+
+.main-wrapper.welcome {
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  max-width: 100%;
+  width: 100vw;
+}
+
+.welcome-wrapper {
+  background-color: hsla(225, 70%, 29%, 0.55);
+  /* border: 2px solid red; */
+  color: #eee;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  margin: 0 auto;
+  text-align: center;
+  width: clamp(40%, 300px, 80%);
+}
+
+.welcome-screen .game-title {
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-bottom: var(--mb-half);
+}
+
+.welcome-screen .welcome-note {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: var(--mb-one);
+}
+
+.welcome-screen form > * {
+  display: block;
+}
+
+.welcome-screen form label {
+  font-size: 15px;
+  margin-bottom: var(--mb-half);
+}
+
+.welcome-screen form input {
+  padding: 6px 10px;
+  margin-bottom: var(--mb-half);
+  width: 100%;
+}
+
+.welcome-screen form select {
+  padding: 6px 10px;
+  margin-bottom: var(--mb-two);
+  width: 100%;
+}
+
+.welcome-screen form .btn {
+  background-color: hsla(225, 89%, 49%, 0.95);
+  border: 0;
+  border-radius: 2px;
+  color: #eee;
+  cursor: pointer;
+  padding: 8px 15px;
+  margin: 0 auto;
+}
+
+.welcome-screen .btn:hover {
+  background-color: hsla(225, 89%, 30%, 0.95);
+}
+
+.welcome-screen .btn:active {
+  transform: scale(0.9);
+}
+
 /*----------------- Header -----------------*/
+
+header {
+  /* border: 2px solid rebeccapurple; */
+  width: 100%;
+}
+
+header .header-bar {
+  background-color: hsla(225, 70%, 29%, 0.9);
+  /* border: 1px solid yellowgreen; */
+  color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0.4rem;
+}
+
 .game-title {
   font-size: 26px;
-  margin-bottom: var(--mb-one);
+  /* margin-bottom: var(--mb-one); */
   letter-spacing: 1px;
 }
 
+.username-display {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .game-instructions {
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   text-align: center;
   max-width: 450px;
+  padding: var(--mb-one) var(--mb-half) var(--mb-half);
+  /* text-align: center; */
 }
 
 /*-------------- Game Wrapper --------------*/
@@ -65,6 +172,9 @@ body {
 
 .illustration-display {
   /* border: 2px solid rebeccapurple; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-area: illustration;
 }
 
@@ -181,9 +291,15 @@ body {
   cursor: pointer;
   color: #2980b9;
   border: 0;
-  margin-top: 20px;
+  display: block;
+  margin: 20px auto 0;
   padding: 5px 12px;
   font-size: 15px;
+}
+
+.popup .exit-btn {
+  background-color: hsla(0, 90%, 40%, 0.8);
+  color: #fff;
 }
 
 .popup .btn:hover {
@@ -234,8 +350,8 @@ body {
   color: hsl(0, 94%, 65%);
   padding: 15px 12px;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 10%;
+  right: 10%;
   bottom: 0;
   text-align: center;
   transition: transform 0.3s ease-in-out;
@@ -258,6 +374,10 @@ body {
 }
 
 @media screen and (max-width: 495px) {
+  .main-wrapper {
+    height: 105vh;
+  }
+
   .game-wrapper {
     width: 90%;
   }

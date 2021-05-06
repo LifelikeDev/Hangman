@@ -1,6 +1,9 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
-const Word = ({ selectedWord, correctLetters }) => {
+const Word = () => {
+  const { selectedWord, correctLetters } = useGlobalContext();
+
   return (
     <article className="word">
       {selectedWord.split("").map((letter, index) => {

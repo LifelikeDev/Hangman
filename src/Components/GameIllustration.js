@@ -1,6 +1,9 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
-const GameIllustration = ({ wrongLetters }) => {
+const GameIllustration = () => {
+  const { wrongLetters } = useGlobalContext();
+
   const errors = wrongLetters.length;
   return (
     <>
