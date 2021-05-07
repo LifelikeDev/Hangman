@@ -8,7 +8,7 @@ const Header = () => {
     <header>
       <div className="header-bar">
         <h2 className="game-title">Hangman</h2>
-        <h3 className="username-display">{username}</h3>
+        <h3 className="username__header">{username}</h3>
       </div>
       <div className="header-content">
         <p className="game-instructions">

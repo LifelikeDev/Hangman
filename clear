@@ -1,0 +1,79 @@
+[33mcommit a928b27979680a362f440dc2d20ca2353f45d063[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Fri May 7 15:38:27 2021 +0000
+
+    category selection feature and functionality synchronized
+
+[33mcommit bdf18a812c8b7371ed15b7c5f0a3686ea6febeab[m[33m ([m[1;31morigin/master[m[33m)[m
+Merge: 6a57ac9 772eade
+Author: Navian <primeguyy@gmail.com>
+Date:   Thu May 6 21:33:34 2021 +0000
+
+    Merge branch 'master' of github.com:LifelikeDev/Hangman
+
+[33mcommit 6a57ac930c51bf3def7fcfd94e692a229731a679[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Thu May 6 21:27:31 2021 +0000
+
+    category selection functionality added
+
+[33mcommit e0c41fa26dcce940af359883de4aae20ff4c7de3[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Thu May 6 15:05:37 2021 +0000
+
+    welcome screen added
+
+[33mcommit 772eade0a6a9adf59cf357c797158bacdcbb2400[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Wed May 5 21:44:30 2021 +0000
+
+    Update README.md
+
+[33mcommit af6885225217eff2cbb8a60d078da260f1f385fa[m
+Merge: 90c6280 85be7db
+Author: Navian <primeguyy@gmail.com>
+Date:   Wed May 5 21:41:59 2021 +0000
+
+    Merge branch 'master' of github.com:LifelikeDev/Hangman
+
+[33mcommit 90c6280f04a54bdfb6521744fae9c156281b9e26[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Wed May 5 19:13:07 2021 +0000
+
+    game replay functionality added
+
+[33mcommit f84fe3c2b97d707fd37d7c6961de33aae2df47ae[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Wed May 5 14:39:54 2021 +0000
+
+    figure illustration functionality added
+
+[33mcommit 85be7dbd2d2540832928a7a282308491be444fad[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Tue May 4 21:22:09 2021 +0000
+
+    Update README.md
+
+[33mcommit 58723dca20e0d3f314ff27b1409446b3365e0c84[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Tue May 4 21:21:15 2021 +0000
+
+    Update README.md
+
+[33mcommit ca754708cb7c37817857fc525453c37ef791a2cf[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Tue May 4 21:20:44 2021 +0000
+
+    Update README.md
+
+[33mcommit 0fa6108202c8aa466fdb39d158da67558704dca5[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Tue May 4 21:07:11 2021 +0000
+
+    functionality to enter letters of given word added
+
+[33mcommit f70da444f434b08d6eeb4bd5e8765e2c39d18d83[m
+Author: Navian <primeguyy@gmail.com>
+Date:   Tue May 4 19:20:04 2021 +0000
+
+    initial commit

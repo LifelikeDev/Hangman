@@ -59,19 +59,24 @@ body {
   height: 400px;
   margin: 0 auto;
   text-align: center;
-  width: clamp(40%, 300px, 80%);
+  width: clamp(50%, 280px, 85%);
+}
+
+.welcome-wrapper.loading {
+  height: 280px;
+  /* width: clamp(40%, 200px, 75%); */
 }
 
 .welcome-screen .game-title {
   font-size: 30px;
   letter-spacing: 2px;
-  margin-bottom: var(--mb-half);
+  margin-bottom: var(--mb-two);
 }
 
-.welcome-screen .welcome-note {
+.welcome-note {
   font-size: 17px;
   font-weight: 500;
-  margin-bottom: var(--mb-one);
+  margin-bottom: var(--mb-two);
 }
 
 .welcome-screen form > * {
@@ -113,6 +118,13 @@ body {
   transform: scale(0.9);
 }
 
+.username__loading {
+  color: #ff0;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
 /*----------------- Header -----------------*/
 
 header {
@@ -136,7 +148,7 @@ header .header-bar {
   letter-spacing: 1px;
 }
 
-.username-display {
+.username__header {
   font-size: 17px;
   font-weight: 500;
 }
@@ -396,5 +408,13 @@ header .header-content {
   .letter {
     margin: 0 3px;
     width: 20px;
+  }
+
+  .game-title {
+    font-size: 22px;
+  }
+
+  .username__header {
+    font-size: 15px;
   }
 }

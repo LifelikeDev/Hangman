@@ -9,6 +9,18 @@ function showNotification(setter) {
   }, 2000);
 }
 
+// function for showing loading notification after welcome screen
+function showProcess(setter) {
+  // set passed-in setter function to true
+  setter(true);
+  console.log("show process loading called");
+
+  // set passed-in setter function to false after 3 seconds
+  setTimeout(() => {
+    setter(false);
+  }, 4000);
+}
+
 // game status check
 
 function checkWinStatus(correct, wrong, word) {
@@ -26,4 +38,4 @@ function checkWinStatus(correct, wrong, word) {
   return status;
 }
 
-export { showNotification, checkWinStatus };
+export { showNotification, showProcess, checkWinStatus };

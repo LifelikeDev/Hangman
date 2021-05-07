@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { wordsArray, chosen } from "./wordsArray";
 // import notification function
 import { showNotification as displayNotification } from "./helpers/helperFunctions";
+import { showProcess } from "./helpers/helperFunctions";
 
 // Create context
 const AppContext = React.createContext();
@@ -13,6 +14,8 @@ const AppProvider = ({ children }) => {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
   const [welcome, setWelcome] = useState(true);
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
@@ -61,6 +64,7 @@ const AppProvider = ({ children }) => {
       displayNotification(setUsernameError);
     } else {
       setWelcome(false);
+      showProcess(setIsLoading);
       playAgain();
     }
 
@@ -74,13 +78,17 @@ const AppProvider = ({ children }) => {
   function playAgain() {
     // set play to true
     setPlay(true);
+    // set exiting to false
+    setIsExiting(false);
 
     // reset correct letters and wrong letters array
     setCorrectLetters([]);
     setWrongLetters([]);
 
     // reset selected word
-    const randomWord = Math.floor(Math.random() * wordsArray.length);
+    const randomWord = Math.floor(
+      Math.random() * wordsArray[categoryValue].length
+    );
     selectedWord = wordsArray[categoryValue][randomWord].toLowerCase();
     console.log("selected word from play again...", selectedWord);
   }
@@ -88,6 +96,8 @@ const AppProvider = ({ children }) => {
   // exit game
   function exitGame() {
     setPlay(false);
+    setIsExiting(true);
+    showProcess(setIsLoading);
     setWelcome(true);
   }
 
@@ -99,10 +109,13 @@ const AppProvider = ({ children }) => {
         selectedWord,
         showNotification,
         welcome,
+        isLoading,
+        isExiting,
         username,
         usernameError,
         setUsername,
         setCategoryValue,
+        setIsLoading,
         loadGame,
         exitGame,
         playAgain,

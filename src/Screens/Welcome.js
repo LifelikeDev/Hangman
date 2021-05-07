@@ -14,7 +14,6 @@ const Welcome = () => {
       <section className="welcome-wrapper">
         <div className="welcome-screen">
           <h2 className="game-title">Hangman</h2>
-          <h3 className="welcome-note">Welcome 👋</h3>
           <form onSubmit={loadGame}>
             <label htmlFor="username">Enter your username</label>
             <input
