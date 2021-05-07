@@ -36,7 +36,13 @@ const Popup = () => {
       className={`popup-wrapper ${winStatusHeadline !== "" ? "reveal" : ""}`}
     >
       <div className="popup">
-        <h2 className="game-status headline">{winStatusHeadline}</h2>
+        <h2
+          className={`game-status headline ${
+            winStatusHeadline === "You Won!" ? "game-won" : "game-lost"
+          }`}
+        >
+          {winStatusHeadline}
+        </h2>
         <h2 className="game-status subline">{winStatusSubline}</h2>
         {winStatusHeadline === "You lost!" && (
           <p className="word-revealer">
