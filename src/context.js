@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import wordsArray from "./wordsArray";
+import { wordsArray, chosen } from "./wordsArray";
 // import notification function
 import { showNotification as displayNotification } from "./helpers/helperFunctions";
 
 // Create context
 const AppContext = React.createContext();
-let selectedWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+let selectedWord = chosen;
 
 // set up AppProvider
 const AppProvider = ({ children }) => {
@@ -16,9 +16,12 @@ const AppProvider = ({ children }) => {
   const [welcome, setWelcome] = useState(true);
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
+  const [categoryValue, setCategoryValue] = useState(0);
 
+  console.log("selected word from context.js", selectedWord);
+
+  // define keydown event handler function
   useEffect(() => {
-    // define keydown event handler function
     const handleKeydownEvent = (event) => {
       const { key, keyCode } = event;
       // checking for alphabet keys on the keyboard
@@ -49,20 +52,6 @@ const AppProvider = ({ children }) => {
     return () => window.removeEventListener("keydown", handleKeydownEvent);
   }, [play, correctLetters, wrongLetters]);
 
-  // play again function
-  function playAgain() {
-    // set play to true
-    setPlay(true);
-
-    // reset correct letters and wrong letters array
-    setCorrectLetters([]);
-    setWrongLetters([]);
-
-    // reset selected word
-    const randomWord = Math.floor(Math.random() * wordsArray.length);
-    selectedWord = wordsArray[randomWord];
-  }
-
   // load game function
   function loadGame(event) {
     event.preventDefault();
@@ -75,8 +64,25 @@ const AppProvider = ({ children }) => {
       playAgain();
     }
 
+    console.log("load game called");
+
     // setUsername(value);
-    console.log(username);
+    // console.log(username);
+  }
+
+  // play again function
+  function playAgain() {
+    // set play to true
+    setPlay(true);
+
+    // reset correct letters and wrong letters array
+    setCorrectLetters([]);
+    setWrongLetters([]);
+
+    // reset selected word
+    const randomWord = Math.floor(Math.random() * wordsArray.length);
+    selectedWord = wordsArray[categoryValue][randomWord].toLowerCase();
+    console.log("selected word from play again...", selectedWord);
   }
 
   // exit game
@@ -96,6 +102,7 @@ const AppProvider = ({ children }) => {
         username,
         usernameError,
         setUsername,
+        setCategoryValue,
         loadGame,
         exitGame,
         playAgain,

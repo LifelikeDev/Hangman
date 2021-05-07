@@ -2,7 +2,13 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 const Welcome = () => {
-  const { setUsername, loadGame, username, usernameError } = useGlobalContext();
+  const {
+    setUsername,
+    setCategoryValue,
+    loadGame,
+    username,
+    usernameError,
+  } = useGlobalContext();
   return (
     <main className="main-wrapper welcome">
       <section className="welcome-wrapper">
@@ -18,12 +24,15 @@ const Welcome = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
             <label htmlFor="category">Choose Category</label>
-            <select name="category">
-              <option value="cars">Cars</option>
-              <option value="cities">Cities</option>
-              <option value="languages">Languages</option>
-              <option value="sports">Sports</option>
-              <option value="tools">Tools</option>
+            <select
+              name="category"
+              onChange={(e) => setCategoryValue(e.target.value)}
+            >
+              <option value="0">Cars</option>
+              <option value="1">Cities</option>
+              <option value="2">Languages</option>
+              <option value="3">Sports</option>
+              <option value="4">Tools</option>
             </select>
             <button type="submit" className="btn">
               Play Game

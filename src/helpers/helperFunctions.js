@@ -6,7 +6,7 @@ function showNotification(setter) {
   // set passed-in setter function to false after 3 seconds
   setTimeout(() => {
     setter(false);
-  }, 3000);
+  }, 2000);
 }
 
 // game status check

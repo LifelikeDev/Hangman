@@ -61,4 +61,22 @@ const wordsArray = [
   ],
 ];
 
-export default wordsArray;
+// const wordsArray = [
+//   "Knife",
+//   "Drill",
+//   "Hammer",
+//   "Chisel",
+//   "Brush",
+//   "Axe",
+//   "Screwdriver",
+//   "Saw",
+//   "Lawnmower",
+//   "Machete",
+// ];
+
+let chosen = wordsArray[0][
+  Math.floor(Math.random() * wordsArray.length)
+].toLowerCase();
+console.log("initial selected word...", chosen);
+
+export { wordsArray, chosen };
