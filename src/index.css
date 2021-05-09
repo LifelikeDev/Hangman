@@ -4,12 +4,10 @@
   --accent-blue: #2980b9;
   --accent-red: hsl(0, 90%, 45%);
   --accent-yellow: #ffc857;
-  --main-bg: #212f45;
   --primary-bg: hsl(194, 85%, 5%);
   --secondary-bg: hsl(194, 85%, 7%);
   --play-btn-bg: #006466;
   --border-radius: 3px;
-  --main-box-shadow: 2px -2px 50px 6px rgba(0, 0, 0, 0.7);
   --input-padding: 6px 10px;
   --mb-half: 0.5rem;
   --mb-one: 1rem;
@@ -37,7 +35,6 @@ body {
   /* border: 2px solid blue; */
   /* background-color: var(--secondary-bg); */
   border: transparent;
-  /* box-shadow: 2px -2px 8px 2px rgba(0, 0, 0, 0.7); */
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -139,7 +136,6 @@ body {
 /*----------------- Header -----------------*/
 
 header {
-  /* border: 2px solid rebeccapurple; */
   width: 100%;
 }
 
@@ -192,9 +188,9 @@ header .header-content {
   grid-template-areas:
     "illustration"
     "word";
-  width: 50%;
+  /* width: 50%; */
   margin: var(--mb-one) auto;
-  padding-bottom: var(--mb-one);
+  padding: 0 var(--mb-half) var(--mb-one);
 }
 
 .illustration-display {
@@ -330,7 +326,7 @@ header .header-content {
 }
 
 .popup {
-  background: var(--primary-bg);
+  background: var(--secondary-bg);
   border-radius: var(--border-radius);
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 30px 100px;

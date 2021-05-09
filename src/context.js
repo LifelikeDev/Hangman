@@ -60,43 +60,53 @@ const AppProvider = ({ children }) => {
     event.preventDefault();
 
     if (username === "") {
-      //   window.alert("Please enter your username");
       displayNotification(setUsernameError);
     } else {
+      let categoryChoice = parseInt(event.target[1].value);
       setWelcome(false);
       showProcess(setIsLoading);
-      playAgain();
+      setCategoryValue(categoryChoice);
+      console.log("category choice set...");
+      playAgain(categoryChoice);
     }
 
-    console.log("load game called");
-
-    // setUsername(value);
-    // console.log(username);
+    console.log(categoryValue);
   }
 
   // play again function
-  function playAgain() {
-    // set play to true
+  function playAgain(categoryChoice) {
     setPlay(true);
-    // set exiting to false
     setIsExiting(false);
 
     // reset correct letters and wrong letters array
     setCorrectLetters([]);
     setWrongLetters([]);
 
-    // reset selected word
-    const randomWord = Math.floor(
-      Math.random() * wordsArray[categoryValue].length
-    );
-    selectedWord = wordsArray[categoryValue][randomWord].toLowerCase();
-    console.log("selected word from play again...", selectedWord);
+    console.log(categoryValue);
+    console.log(categoryChoice);
+
+    if (welcome) {
+      // reset selected word on welcome
+      const randomWord = Math.floor(
+        Math.random() * wordsArray[categoryChoice].length
+      );
+      selectedWord = wordsArray[categoryChoice][randomWord].toLowerCase();
+      console.log("selected word from play game...", selectedWord);
+    } else {
+      // reset selected word on try again
+      const randomWord = Math.floor(
+        Math.random() * wordsArray[categoryValue].length
+      );
+      selectedWord = wordsArray[categoryValue][randomWord].toLowerCase();
+      console.log("selected word from try again...", selectedWord);
+    }
   }
 
   // exit game
   function exitGame() {
     setPlay(false);
-    setIsExiting(true);
+    // setIsExiting(true);
+    showProcess(setIsExiting);
     showProcess(setIsLoading);
     setWelcome(true);
   }
@@ -113,6 +123,7 @@ const AppProvider = ({ children }) => {
         isExiting,
         username,
         usernameError,
+        categoryValue,
         setUsername,
         setCategoryValue,
         setIsLoading,
