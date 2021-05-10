@@ -5,6 +5,7 @@ import WrongLetters from "../Components/WrongLetters";
 import Word from "../Components/Word";
 import Popup from "../Components/Popup";
 import Notification from "../Components/Notification";
+import Copyright from "../Components/Copyright";
 // import notification function
 // import { showNotification as displayNotification } from "./helpers/helperFunctions";
 
@@ -76,6 +77,7 @@ const App = () => {
       </section>
       <Popup />
       <Notification />
+      <Copyright />
     </main>
   );
 };
