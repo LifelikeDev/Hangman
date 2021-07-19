@@ -138,6 +138,5 @@ const wordsArray = [
 
 let chosen =
   wordsArray[0][Math.floor(Math.random() * wordsArray[0].length)].toLowerCase();
-console.log("initial selected word...", chosen);
 
 export { wordsArray, chosen };

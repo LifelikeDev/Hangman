@@ -64,7 +64,6 @@ const AppProvider = ({ children }) => {
       setWelcome(false);
       showProcess(setIsLoading);
       setCategoryValue(categoryChoice);
-      // console.log("category choice set...");
       playAgain(categoryChoice);
     }
 

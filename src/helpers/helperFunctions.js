@@ -13,7 +13,6 @@ function showNotification(setter) {
 function showProcess(setter) {
   // set passed-in setter function to true
   setter(true);
-  console.log("show process loading called");
 
   // set passed-in setter function to false after 3 seconds
   setTimeout(() => {
