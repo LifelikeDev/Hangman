@@ -20,7 +20,6 @@ const AppProvider = ({ children }) => {
   const [username, setUsername] = useState("");
   const [usernameError, setUsernameError] = useState(false);
   const [categoryValue, setCategoryValue] = useState(0);
-  const [typedLetters, setTypedLetters] = useState("");
 
   console.log("selected word from context.js", selectedWord);
 
@@ -78,7 +77,6 @@ const AppProvider = ({ children }) => {
   function playAgain(categoryChoice) {
     setPlay(true);
     setIsExiting(false);
-    setTypedLetters("");
 
     // reset correct letters and wrong letters array
     setCorrectLetters([]);
@@ -107,8 +105,6 @@ const AppProvider = ({ children }) => {
   // exit game
   function exitGame() {
     setPlay(false);
-    // setIsExiting(true);
-    setTypedLetters("");
     showProcess(setIsExiting);
     showProcess(setIsLoading);
     setWelcome(true);
@@ -127,11 +123,9 @@ const AppProvider = ({ children }) => {
         username,
         usernameError,
         categoryValue,
-        typedLetters,
         setUsername,
         setCategoryValue,
         setIsLoading,
-        setTypedLetters,
         setPlay,
         loadGame,
         exitGame,
