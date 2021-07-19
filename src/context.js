@@ -21,8 +21,6 @@ const AppProvider = ({ children }) => {
   const [usernameError, setUsernameError] = useState(false);
   const [categoryValue, setCategoryValue] = useState(0);
 
-  console.log("selected word from context.js", selectedWord);
-
   // define keydown event handler function
   useEffect(() => {
     const handleKeydownEvent = (event) => {
