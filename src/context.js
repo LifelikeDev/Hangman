@@ -64,11 +64,11 @@ const AppProvider = ({ children }) => {
       setWelcome(false);
       showProcess(setIsLoading);
       setCategoryValue(categoryChoice);
-      console.log("category choice set...");
+      // console.log("category choice set...");
       playAgain(categoryChoice);
     }
 
-    console.log(categoryValue);
+    // console.log(categoryValue);
   }
 
   // play again function
@@ -80,8 +80,8 @@ const AppProvider = ({ children }) => {
     setCorrectLetters([]);
     setWrongLetters([]);
 
-    console.log(categoryValue);
-    console.log(categoryChoice);
+    // console.log(categoryValue);
+    // console.log(categoryChoice);
 
     if (welcome) {
       // reset selected word on welcome
@@ -89,14 +89,14 @@ const AppProvider = ({ children }) => {
         Math.random() * wordsArray[categoryChoice].length
       );
       selectedWord = wordsArray[categoryChoice][randomWord].toLowerCase();
-      console.log("selected word from play game...", selectedWord);
+      // console.log("selected word from play game...", selectedWord);
     } else {
       // reset selected word on try again
       const randomWord = Math.floor(
         Math.random() * wordsArray[categoryValue].length
       );
       selectedWord = wordsArray[categoryValue][randomWord].toLowerCase();
-      console.log("selected word from try again...", selectedWord);
+      // console.log("selected word from try again...", selectedWord);
     }
   }
 
