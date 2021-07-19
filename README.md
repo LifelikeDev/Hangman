@@ -1,7 +1,9 @@
 # Hangman 
 A desktop web version of the hangman game. This game is built with React and React hooks such as useState, useEffect and useContext.
 
-Find the app deployed [here](https://hangman-rg.netlify.app)
+Find the app deployed [here](https://hangman-rg.netlify.app).
+
+See if you can save hangman. Enjoy the game!!!
 
 ---
 
