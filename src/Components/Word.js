@@ -2,18 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 const Word = () => {
-  const {
-    selectedWord,
-    correctLetters,
-    activatedPad,
-    typedLetters,
-    setTypedLetters,
-    setActivatedPad,
-  } = useGlobalContext();
-
-  function showKeypad() {
-    setActivatedPad(true);
-  }
+  const { selectedWord, correctLetters } = useGlobalContext();
 
   return (
     <article className="word-wrapper">
@@ -25,18 +14,6 @@ const Word = () => {
             </span>
           );
         })}
-      </div>
-      <div
-        className={`smartphone__toggle-input ${activatedPad ? "clicked" : ""}`}
-      >
-        <input
-          type="text"
-          className="toggle-input"
-          placeholder="tap here to activate keypad"
-          value={typedLetters}
-          onChange={(e) => setTypedLetters(e.target.value)}
-          onFocus={showKeypad}
-        />
       </div>
     </article>
   );
